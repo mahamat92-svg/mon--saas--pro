@@ -40,7 +40,7 @@ export const INITIAL_WORKSPACES: Workspace[] = [
   {
     id: "ws-acme",
     name: "Bouba SaaS Pro",
-    slug: "Bouba SaaS Pro",
+    slug: "bouba-saas-pro",
     logo: "🚀",
     plan: "pro",
     billingInterval: "monthly",
