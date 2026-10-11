@@ -1,98 +1,65 @@
-'use client';
-
-import React, { useState } from 'react';
-import { useApp } from '@/context/AppContext';
-import { Sidebar } from '@/components/layout/Sidebar';
-import { Header } from '@/components/layout/Header';
-import { DashboardView } from '@/components/dashboard/DashboardView';
-import { ProjectList } from '@/components/projects/ProjectList';
-import { TasksView } from '@/components/tasks/TasksView';
-import { BillingView } from '@/components/billing/BillingView';
-import { TeamMemberList } from '@/components/team/TeamMemberList';
-import { WorkspaceSettings } from '@/components/settings/WorkspaceSettings';
-import { AuthModal } from '@/components/auth/AuthModal';
-import { ToastContainer } from '@/components/ui/Toast';
-import { ProjectModal } from '@/components/projects/ProjectModal';
-import { TaskModal } from '@/components/tasks/TaskModal';
-import { InviteMemberModal } from '@/components/team/InviteMemberModal';
+import Link from "next/link";
 
 export default function Home() {
-  const { isAuthenticated, activeView } = useApp();
-  const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
-
-  // Global modal states
-  const [isNewProjectModalOpen, setIsNewProjectModalOpen] = useState(false);
-  const [isNewTaskModalOpen, setIsNewTaskModalOpen] = useState(false);
-  const [isInviteMemberModalOpen, setIsInviteMemberModalOpen] = useState(false);
-
-  if (!isAuthenticated) {
-    return (
-      <>
-        <ToastContainer />
-        <AuthModal />
-      </>
-    );
-  }
-
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col antialiased selection:bg-indigo-500 selection:text-white">
-      {/* Toast notifications */}
-      <ToastContainer />
+    <div className="min-h-screen bg-[#0a0e27] text-white">
+      {/* HEADER - PUBLIQUE */}
+      <header className="flex justify-between items-center p-6 max-w-6xl mx-auto">
+        <h1 className="text-xl font-bold flex items-center gap-2">
+          🚀 Acme Cloud Solutions
+        </h1>
+        <Link href="/inbox" className="bg-white text-black px-4 py-2 rounded-lg font-bold">
+          Connexion
+        </Link>
+      </header>
 
-      {/* Main App Layout */}
-      <div className="flex flex-1">
-        {/* Sidebar */}
-        <Sidebar
-          isOpenMobile={isMobileSidebarOpen}
-          onCloseMobile={() => setIsMobileSidebarOpen(false)}
-        />
+      {/* HERO - INTERFACE PUBLIQUE POUR CLIENTÈLE */}
+      <main className="max-w-6xl mx-auto px-6 py-20 text-center">
+        <span className="bg-blue-900 text-blue-300 px-3 py-1 rounded-full text-sm">
+          ESPACE MULTITENANT OPÉRATIONNEL
+        </span>
 
-        {/* Content Wrapper */}
-        <div className="flex-1 flex flex-col lg:pl-72 min-w-0">
-          <Header
-            onOpenMobileSidebar={() => setIsMobileSidebarOpen(true)}
-            onOpenNewProject={() => setIsNewProjectModalOpen(true)}
-            onOpenNewTask={() => setIsNewTaskModalOpen(true)}
-            onOpenInviteMember={() => setIsInviteMemberModalOpen(true)}
-          />
+        <h2 className="text-5xl font-bold mt-6 leading-tight">
+          Bienvenue sur <br />Acme Cloud Solutions
+        </h2>
 
-          <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto">
-            {activeView === 'dashboard' && (
-              <DashboardView
-                onOpenNewProject={() => setIsNewProjectModalOpen(true)}
-                onOpenNewTask={() => setIsNewTaskModalOpen(true)}
-                onOpenInviteMember={() => setIsInviteMemberModalOpen(true)}
-              />
-            )}
+        <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg">
+          Supervisez l'ensemble de vos sprints, suivez vos tâches en Kanban interactif et synchronisez vos factures déductibles Stripe sans friction.
+        </p>
 
-            {activeView === 'projects' && <ProjectList />}
-
-            {activeView === 'tasks' && <TasksView />}
-
-            {activeView === 'billing' && <BillingView />}
-
-            {activeView === 'team' && <TeamMemberList />}
-
-            {activeView === 'settings' && <WorkspaceSettings />}
-          </main>
+        <div className="mt-8 flex gap-4 justify-center">
+          <Link href="/inbox" className="bg-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-blue-700">
+            Commencer - 15000 FCFA/mois
+          </Link>
+          <a href="#prix" className="border border-gray-700 px-8 py-3 rounded-lg hover:bg-gray-800">
+            Voir les prix
+          </a>
         </div>
-      </div>
 
-      {/* Global Quick Action Modals */}
-      <ProjectModal
-        isOpen={isNewProjectModalOpen}
-        onClose={() => setIsNewProjectModalOpen(false)}
-      />
+        {/* 3 CARTES PRIX */}
+        <div id="prix" className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+          <div className="bg-[#141a3a] p-6 rounded-xl">
+            <h3 className="font-bold">4 membres</h3>
+            <p className="text-sm text-gray-400 mt-1">Rôles & Invitations</p>
+          </div>
+          <div className="bg-[#141a3a] p-6 rounded-xl">
+            <h3 className="font-bold">1/2 tâches terminées</h3>
+            <p className="text-sm text-gray-400 mt-1">Vélocité sprint optimale 60%</p>
+          </div>
+          <div className="bg-[#141a3a] p-6 rounded-xl border border-blue-600">
+            <h3 className="text-2xl font-bold">15000 FCFA / mois</h3>
+            <p className="text-sm text-green-400 mt-1">Forfait PRO actif +14.5%</p>
+            <Link href="/inbox" className="mt-4 block bg-blue-600 text-center py-2 rounded-lg font-bold hover:bg-blue-700">
+              Gérer les Factures
+            </Link>
+          </div>
+        </div>
+      </main>
 
-      <TaskModal
-        isOpen={isNewTaskModalOpen}
-        onClose={() => setIsNewTaskModalOpen(false)}
-      />
-
-      <InviteMemberModal
-        isOpen={isInviteMemberModalOpen}
-        onClose={() => setIsInviteMemberModalOpen(false)}
-      />
+      {/* FOOTER */}
+      <footer className="text-center text-gray-600 text-sm py-8">
+        © 2026 Acme Cloud Solutions - Garoua, Cameroun
+      </footer>
     </div>
   );
 }
