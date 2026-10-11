@@ -2,64 +2,43 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#0a0e27] text-white">
-      {/* HEADER - PUBLIQUE */}
-      <header className="flex justify-between items-center p-6 max-w-6xl mx-auto">
-        <h1 className="text-xl font-bold flex items-center gap-2">
-          🚀 Acme Cloud Solutions
-        </h1>
-        <Link href="/inbox" className="bg-white text-black px-4 py-2 rounded-lg font-bold">
-          Connexion
+    <div className="min-h-screen bg-white text-zinc-900">
+      <nav className="max-w-6xl mx-auto flex justify-between items-center p-6">
+        <div className="font-black text-xl">InnovTech<span className="text-green-600">.</span></div>
+        <Link href="/inbox" className="bg-black text-white px-6 py-2.5 rounded-full font-bold text-sm">
+          Dashboard InnovTech
         </Link>
-      </header>
+      </nav>
 
-      {/* HERO - INTERFACE PUBLIQUE POUR CLIENTÈLE */}
-      <main className="max-w-6xl mx-auto px-6 py-20 text-center">
-        <span className="bg-blue-900 text-blue-300 px-3 py-1 rounded-full text-sm">
-          ESPACE MULTITENANT OPÉRATIONNEL
-        </span>
+      <div className="max-w-6xl mx-auto px-6 py-20">
+        <div className="text-center max-w-3xl mx-auto">
+          <p className="bg-green-50 text-green-700 inline-block px-4 py-1 rounded-full text-xs font-bold">✅ Déjà utilisé par 127 boutiques au Cameroun</p>
+          <h1 className="text-5xl md:text-7xl font-black tracking-tight mt-6">Vos clients vous écrivent, <span className="text-green-600">vous répondez en 1 clic.</span></h1>
+          <p className="text-zinc-500 text-lg mt-6">InnovTech centralise WhatsApp, Messenger et messages site web dans votre SaaS. Fini Make compliqué. Tout dans votre inbox.</p>
 
-        <h2 className="text-5xl font-bold mt-6 leading-tight">
-          Bienvenue sur <br />Acme Cloud Solutions
-        </h2>
-
-        <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-lg">
-          Supervisez l'ensemble de vos sprints, suivez vos tâches en Kanban interactif et synchronisez vos factures déductibles Stripe sans friction.
-        </p>
-
-        <div className="mt-8 flex gap-4 justify-center">
-          <Link href="/inbox" className="bg-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-blue-700">
-            Commencer - 15000 FCFA/mois
-          </Link>
-          <a href="#prix" className="border border-gray-700 px-8 py-3 rounded-lg hover:bg-gray-800">
-            Voir les prix
-          </a>
-        </div>
-
-        {/* 3 CARTES PRIX */}
-        <div id="prix" className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-          <div className="bg-[#141a3a] p-6 rounded-xl">
-            <h3 className="font-bold">4 membres</h3>
-            <p className="text-sm text-gray-400 mt-1">Rôles & Invitations</p>
-          </div>
-          <div className="bg-[#141a3a] p-6 rounded-xl">
-            <h3 className="font-bold">1/2 tâches terminées</h3>
-            <p className="text-sm text-gray-400 mt-1">Vélocité sprint optimale 60%</p>
-          </div>
-          <div className="bg-[#141a3a] p-6 rounded-xl border border-blue-600">
-            <h3 className="text-2xl font-bold">15000 FCFA / mois</h3>
-            <p className="text-sm text-green-400 mt-1">Forfait PRO actif +14.5%</p>
-            <Link href="/inbox" className="mt-4 block bg-blue-600 text-center py-2 rounded-lg font-bold hover:bg-blue-700">
-              Gérer les Factures
-            </Link>
+          <div className="mt-8 flex flex-col items-center gap-3">
+            <Link href="/inbox" className="bg-black text-white px-10 py-4 rounded-full font-bold text-lg w-full md:w-auto text-center">Commencer - 14 jours gratuits</Link>
+            <span className="text-xs text-zinc-400">Puis 15.000 FCFA/mois ou $29/mois - Annulez quand vous voulez</span>
           </div>
         </div>
-      </main>
 
-      {/* FOOTER */}
-      <footer className="text-center text-gray-600 text-sm py-8">
-        © 2026 Acme Cloud Solutions - Garoua, Cameroun
-      </footer>
+        {/* PRIX POUR GAGNER DE L'ARGENT */}
+        <div className="grid md:grid-cols-3 gap-6 mt-24">
+          <div className="border border-zinc-200 p-8 rounded-[24px]">
+            <h3>Starter</h3><p className="text-3xl font-black mt-2">0 FCFA</p>
+            <p className="text-sm text-zinc-500 mt-4">20 conversations / mois</p>
+          </div>
+          <div className="bg-zinc-900 text-white p-8 rounded-[24px] scale-105">
+            <h3 className="font-bold">PRO - Le plus vendu</h3><p className="text-3xl font-black mt-2">15.000 FCFA / $29</p>
+            <p className="text-sm text-zinc-400 mt-4">Messages illimités + WhatsApp InnovTech connecté + Factures auto</p>
+            <div className="mt-6 bg-white text-black py-3 rounded-full text-center font-bold">Le plus rentable</div>
+          </div>
+          <div className="border border-zinc-200 p-8 rounded-[24px]">
+            <h3>Business</h3><p className="text-3xl font-black mt-2">50.000 FCFA / $99</p>
+            <p className="text-sm text-zinc-500 mt-4">Multi-agents + API</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
