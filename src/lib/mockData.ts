@@ -39,7 +39,7 @@ export const DEMO_USERS: User[] = [
 export const INITIAL_WORKSPACES: Workspace[] = [
   {
     id: "ws-acme",
-    name: "Acme Cloud Solutions",
+    name: "Bouba SaaS Pro",
     slug: "acme-cloud",
     logo: "🚀",
     plan: "pro",
