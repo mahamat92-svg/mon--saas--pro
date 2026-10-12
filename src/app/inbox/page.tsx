@@ -5,7 +5,7 @@ export default function InboxPage() {
     const [messages, setMessages] = useState<any[]>([]);
 
     async function loadMessages() {
-        const res = await fetch("/api/message-in");
+        const res = await fetch("/api/messages-in");
         const data = await res.json();
         if (data.messages) setMessages(data.messages);
     }
@@ -38,7 +38,7 @@ export default function InboxPage() {
             <div className="flex-1 p-10 flex items-center justify-center">
                 <div className="text-center">
                     <h1 className="text-2xl font-black">Ça marche Bouba!</h1>
-                    <p className="text-zinc-500 mt-2 max-w-md">Quand un client écrit sur ton numéro WhatsApp InnovTech 651465708, Make envoie vers /api/message-in et ça s'affiche ici à gauche automatiquement.</p>
+                    <p className="text-zinc-500 mt-2 max-w-md">Quand un client écrit sur ton numéro WhatsApp InnovTech 651465708, Make envoie vers /api/ et ça s'affiche ici à gauche automatiquement.</p>
                     <button onClick={loadMessages} className="mt-6 bg-black text-white px-6 py-2 rounded-full text-sm font-bold">Actualiser</button>
                 </div>
             </div>
