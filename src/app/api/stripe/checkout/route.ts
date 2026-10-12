@@ -10,7 +10,7 @@ export async function POST(request: Request) {
       body = {};
     }
 
-    const { planId = 'pro', interval = 'monthly', workspaceId = 'ws-acme', customerEmail = 'client@example.com' } = body;
+    const { planId = 'pro', interval = 'monthly', workspaceId = 'ws-mon-saas-pro', customerEmail = 'client@example.com' } = body;
 
     const priceMap: Record<string, { monthly: number; yearly: number }> = {
       starter: { monthly: 0, yearly: 0 },

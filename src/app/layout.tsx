@@ -2,7 +2,7 @@ import "./globals.css";
 
 export const metadata = {
   title: "mon-saas-pro",
-  description: "Acme Cloud Solutions - Garoua",
+  description: "mon-saas-pro Cloud Solutions - Garoua",
 };
 
 export default function RootLayout({

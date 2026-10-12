@@ -38,7 +38,7 @@ export const DEMO_USERS: User[] = [
 
 export const INITIAL_WORKSPACES: Workspace[] = [
   {
-    id: "ws-acme",
+    id: "ws-mon-saas-pro",
     name: "Bouba SaaS Pro",
     slug: "bouba-saas-pro",
     logo: "🚀",
@@ -48,7 +48,7 @@ export const INITIAL_WORKSPACES: Workspace[] = [
     memberCount: 8,
     currency: "XAF",
     createdAt: "2025-08-15",
-    stripeCustomerId: "cus_AcmeProd8921",
+    stripeCustomerId: "cus_mon-saas-proProd8921",
     ownerEmail: "alexandre@mon-saas-pro.io",
   },
   {
@@ -84,7 +84,7 @@ export const INITIAL_WORKSPACES: Workspace[] = [
 export const INITIAL_MEMBERS: TeamMember[] = [
   {
     id: "mem-1",
-    workspaceId: "ws-acme",
+    workspaceId: "ws-mon-saas-pro",
     name: "Alexandre Martin",
     email: "alexandre@mon-saas-pro.io",
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
@@ -95,7 +95,7 @@ export const INITIAL_MEMBERS: TeamMember[] = [
   },
   {
     id: "mem-2",
-    workspaceId: "ws-acme",
+    workspaceId: "ws-mon-saas-pro",
     name: "Sarah Benali",
     email: "sarah.b@mon-saas-pro.io",
     avatar: "https://images.unsplash.com/photo-1494150000108377-be9c29b29330?w=150&auto=format&fit=crop&q=80",
@@ -106,7 +106,7 @@ export const INITIAL_MEMBERS: TeamMember[] = [
   },
   {
     id: "mem-3",
-    workspaceId: "ws-acme",
+    workspaceId: "ws-mon-saas-pro",
     name: "Thomas Laurent",
     email: "thomas.l@mon-saas-pro.io",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
@@ -117,7 +117,7 @@ export const INITIAL_MEMBERS: TeamMember[] = [
   },
   {
     id: "mem-4",
-    workspaceId: "ws-acme",
+    workspaceId: "ws-mon-saas-pro",
     name: "Camille Dubois",
     email: "camille.d@mon-saas-pro.io",
     avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80",
@@ -164,10 +164,10 @@ export const INITIAL_MEMBERS: TeamMember[] = [
 export const INITIAL_PROJECTS: Project[] = [
   {
     id: "proj-1",
-    workspaceId: "ws-acme",
+    workspaceId: "ws-mon-saas-pro",
     name: "Refonte Plateforme SaaS v3",
     description: "Migration complete vers Next.js App Router, architecture multitenant et integration Stripe Billing.",
-    client: "Interne Acme",
+    client: "Interne mon-saas-pro",
     status: "in_progress",
     priority: "urgent",
     progress: 78,
@@ -180,7 +180,7 @@ export const INITIAL_PROJECTS: Project[] = [
   },
   {
     id: "proj-2",
-    workspaceId: "ws-acme",
+    workspaceId: "ws-mon-saas-pro",
     name: "Design System & UI Kit Tailwind",
     description: "Harmonisation de la charte graphique, composants accessibles et theme sombre avec micro-animations.",
     client: "Produit Core",
@@ -196,7 +196,7 @@ export const INITIAL_PROJECTS: Project[] = [
   },
   {
     id: "proj-3",
-    workspaceId: "ws-acme",
+    workspaceId: "ws-mon-saas-pro",
     name: "Integration API Webhook Stripe",
     description: "Gestion automatique des evenements checkout et retours echec.",
     client: "Facturation & Finance",
@@ -212,7 +212,7 @@ export const INITIAL_PROJECTS: Project[] = [
   },
   {
     id: "proj-4",
-    workspaceId: "ws-acme",
+    workspaceId: "ws-mon-saas-pro",
     name: "Portail Client & Facturation Self-Service",
     description: "Espace client dedie permettant de telecharger les recus PDF, changer de formule et gerer les CB.",
     client: "Customer Success",
@@ -263,7 +263,7 @@ export const INITIAL_PROJECTS: Project[] = [
 export const INITIAL_TASKS: Task[] = [
   {
     id: "task-1",
-    workspaceId: "ws-acme",
+    workspaceId: "ws-mon-saas-pro",
     projectId: "proj-1",
     title: "Configurer App Router multitenant dynamique",
     description: "Permettre le routage isole par workspace et session securisee.",
@@ -281,7 +281,7 @@ export const INITIAL_TASKS: Task[] = [
   },
   {
     id: "task-2",
-    workspaceId: "ws-acme",
+    workspaceId: "ws-mon-saas-pro",
     projectId: "proj-1",
     title: "Brancher les webhooks Stripe en temps reel",
     description: "Ecouter les evenements de facturation et mettre a jour le statut du workspace.",
@@ -302,7 +302,7 @@ export const INITIAL_TASKS: Task[] = [
 export const INITIAL_INVOICES: Invoice[] = [
   {
     id: "inv-101",
-    workspaceId: "ws-acme",
+    workspaceId: "ws-mon-saas-pro",
     invoiceNumber: "INV-2026-003",
     date: "2026-10-01",
     dueDate: "2026-10-15",
@@ -310,7 +310,7 @@ export const INITIAL_INVOICES: Invoice[] = [
     currency: "XAF",
     status: "paid",
     planName: "Formule Pro (Mensuel)",
-    stripePaymentId: "pi_3P001AcmeOct26",
+    stripePaymentId: "pi_3P001mon-saas-proOct26",
     items: [
       { id: "item-1", description: "Abonnement mon-saas-pro - Formule Pro (Octobre 2026)", qty: 1, unitPrice: 15000, amount: 15000 },
     ],
@@ -320,7 +320,7 @@ export const INITIAL_INVOICES: Invoice[] = [
 export const INITIAL_ACTIVITIES: Activity[] = [
   {
     id: "act-1",
-    workspaceId: "ws-acme",
+    workspaceId: "ws-mon-saas-pro",
     user: {
       name: "Alexandre Martin",
       avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",

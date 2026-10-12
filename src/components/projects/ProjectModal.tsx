@@ -151,7 +151,7 @@ export function ProjectModal({ isOpen, onClose, projectToEdit }: ProjectModalPro
                 type="text"
                 value={client}
                 onChange={(e) => setClient(e.target.value)}
-                placeholder="Ex: Interne Acme, Client VIP..."
+                placeholder="Ex: Interne mon-saas-pro, Client VIP..."
                 className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/50"
               />
             </div>
@@ -282,8 +282,8 @@ export function ProjectModal({ isOpen, onClose, projectToEdit }: ProjectModalPro
                     type="button"
                     onClick={() => toggleMember(m.id)}
                     className={`flex items-center gap-2 p-2 rounded-xl border text-left transition-colors ${isSelected
-                        ? 'bg-indigo-600/20 border-indigo-500 text-white'
-                        : 'bg-slate-950 border-slate-800 text-slate-400 hover:border-slate-700'
+                      ? 'bg-indigo-600/20 border-indigo-500 text-white'
+                      : 'bg-slate-950 border-slate-800 text-slate-400 hover:border-slate-700'
                       }`}
                   >
                     <img src={m.avatar} alt="" className="w-6 h-6 rounded-full object-cover shrink-0" />
