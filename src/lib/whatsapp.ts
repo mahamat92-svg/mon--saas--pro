@@ -21,7 +21,7 @@ export async function startWhatsApp() {
     })
 
     sock.ev.on("creds.update", saveCreds)
-    sock.ev.on("messages.upsert", async (m) => {
+    sock.ev.on("messages.upsert", async (m: any) => {
         const msg = m.messages[0];
         if (!msg.key.fromMe && msg.message) {
             const texte = msg.message.conversation || msg.message.extendedTextMessage?.text || "Media";
