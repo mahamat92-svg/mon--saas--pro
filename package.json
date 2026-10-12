@@ -1,5 +1,5 @@
 {
-  "name": "mon--saas--pro",
+  "name": "mon--saas-pro",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,27 +9,19 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@hapi/boom": "^10.0.1",
-    "@types/canvas-confetti": "^1.9.0",
-    "@types/qrcode-terminal": "^0.12.2",
-    "@whiskeysockets/baileys": "^7.0.0-rc14",
+    "next": "14.2.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "lucide-react": "^0.400.0",
     "canvas-confetti": "^1.9.4",
     "jimp": "^1.6.1",
-    "lucide-react": "^0.52.0",
-    "next": "16.3.8",
-    "qrcode-terminal": "^0.12.0",
-    "react": "19.2.8",
-    "react-dom": "19.2.8",
-    "sharp": "^0.35.5"
+    "qrcode-terminal": "^0.12.0"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.3.8",
-    "tailwindcss": "^4",
-    "typescript": "^5"
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.3.0",
+    "eslint": "^8.0.0",
+    "typescript": "^5.0.0"
   }
 }
