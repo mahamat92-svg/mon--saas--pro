@@ -1,9 +1,23 @@
 import { NextRequest, NextResponse } from "next/server";
+
 let messages: any[] = [];
+
 export async function POST(req: NextRequest) {
-    const data = await req.json();
-    const m = { id: Date.now().toString(), from: data.from || "Make", text: data.message || data.text || JSON.stringify(data), timestamp: new Date().toISOString(), ...data };
-    messages.unshift(m);
-    return NextResponse.json({ ok: true });
+    try {
+        const data = await req.json();
+        const newMsg = {
+            id: Date.now().toString(),
+            from: data.from || data.name || "WhatsApp",
+            text: data.message || data.text || JSON.stringify(data),
+            timestamp: new Date().toISOString(),
+        };
+        messages.unshift(newMsg);
+        return NextResponse.json({ ok: true, msg: newMsg });
+    } catch {
+        return NextResponse.json({ ok: false }, { status: 400 });
+    }
 }
-export async function GET() { return NextResponse.json(messages); }
+
+export async function GET() {
+    return NextResponse.json(messages);
+}
